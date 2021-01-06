@@ -5,7 +5,11 @@ import SearchIcon from "../src/Images/search.png";
 import DREAMS from "./dreams-data.json";
 import List from "./components/list";
 import Radio from "./components/RadioButtons";
+import {library} from "@fortawesome/fontawesome-svg-core";
+import {faTrash} from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
+
+library.add(faTrash)
 
 class App extends React.Component {
   constructor(props) {
