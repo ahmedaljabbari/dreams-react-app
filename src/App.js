@@ -1,19 +1,19 @@
 /** @format */
 
 import React from "react";
-import "./App.css";
 import SearchIcon from "../src/Images/search.png";
 import DREAMS from "./dreams-data.json";
+import List from "./components/list";
+import "./App.css";
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       items: DREAMS,
-      searchValue:"",
+      searchValue: "",
       rubrik: "",
-      text: ""
-  
+      text: "",
     };
   }
 
@@ -23,34 +23,34 @@ class App extends React.Component {
     });
   };
 
-  handleTitle = (event) =>{
+  handleTitle = (event) => {
     this.setState({
-      rubrik: event.target.value
-    })
-  }
+      rubrik: event.target.value,
+    });
+  };
 
-  handleContent = (event) =>{
+  handleContent = (event) => {
     this.setState({
-      text: event.target.value
-    })
-  }
+      text: event.target.value,
+    });
+  };
 
   addItem = (e) => {
     e.preventDefault();
     const newItem = {
       title: this.state.rubrik,
-      content: this.state.text
-    }
-    console.log(newItem)
-    if(newItem.rubrik !== ""){
+      content: this.state.text,
+    };
+    console.log(newItem);
+    if (newItem.rubrik !== "") {
       const newItems = [...this.state.items, newItem];
       this.setState({
-        items: newItems,  // خلينه اللسته الجديده بعد اضافة العنصر بمكان اللسته الاصليه
+        items: newItems, // خلينه اللسته الجديده بعد اضافة العنصر بمكان اللسته الاصليه
         rubrik: "",
-        text: ""          //فرغنا الحقول بعد اظافة العنصر الجديد
-      })
+        text: "", //فرغنا الحقول بعد اظافة العنصر الجديد
+      });
     }
-  }
+  };
 
   render() {
     return (
@@ -63,35 +63,27 @@ class App extends React.Component {
             onChange={this.handleInput}
           ></input>
           <button type="submit" className="searchButton">
-            <img src={SearchIcon}></img>{" "}
+            <img src={SearchIcon} alt=""></img>{" "}
           </button>
         </div>
 
         <form id="add-form" onSubmit={this.addItem}>
-          <input type="text" placeholder="Input a title" onChange={this.handleTitle}></input> <br />
-          <textarea onChange={this.handleContent}></textarea> <br />
-
+          <input
+            type="text"
+            placeholder="Input a title"
+            onChange={this.handleTitle}
+            value={this.state.rubrik}
+          ></input>{" "}
+          <br />
+          <textarea
+            onChange={this.handleContent}
+            value={this.state.text}
+          ></textarea>{" "}
+          <br />
           <button type="submit">Add</button>
         </form>
 
-        <section>
-          {this.state.items.map((dream, index) => {
-            if (
-              this.state.searchValue !== "" &&
-              dream.title
-                .toLowerCase()
-                .indexOf(this.state.searchValue.toLowerCase()) === -1
-            ) {
-              return null;
-            }
-            return (
-              <div key={index}>
-                <h4>{dream.title}</h4>
-                <p>{dream.content}</p>
-              </div>
-            );
-          })}
-        </section>
+        <List listItems={this.state.items} searchValue={this.state.searchValue} />
       </div>
     );
   }
