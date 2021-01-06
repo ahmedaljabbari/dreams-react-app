@@ -67,16 +67,18 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div className="search">
-          <input
-            type="text"
-            className="searchTerm"
-            placeholder="What are you looking for?"
-            onChange={this.handleInput}
-          ></input>
-          <button type="submit" className="searchButton">
-            <img src={SearchIcon} alt=""></img>{" "}
-          </button>
+        <div id="header">
+          <div className="search">
+            <input
+              type="text"
+              className="searchTerm"
+              placeholder="Search for dreams ..."
+              onChange={this.handleInput}
+            ></input>
+            <button type="submit" className="searchButton">
+              <img src={SearchIcon} alt=""></img>{" "}
+            </button>
+          </div>
         </div>
 
         <form id="add-form" onSubmit={this.addItem}>

@@ -7,7 +7,6 @@ function Radio(props){
 
   return(
     <div>
-      <h2>Radio external</h2>
       <div>
         <input
           type="radio"

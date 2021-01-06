@@ -8,11 +8,22 @@ body{
   font-family: 'Open Sans', sans-serif;
 }
 
+#header{
+  background-color: brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 5px gray;
+}
+
 .search {
   position: relative;
   display: flex;
   width: 40%;
-  margin: 20px auto;
+  margin: 0 auto;
+  background-color: brown;
 }
 
 .searchTerm {
@@ -47,3 +58,4 @@ body{
   height: 30px;
   margin-left: -7px;
 }
+

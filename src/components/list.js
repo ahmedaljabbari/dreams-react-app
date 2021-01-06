@@ -17,7 +17,7 @@ function List(props){
               return null;
             }
             return (
-              <div key={index}>
+              <div id="dream-box" key={index}>
                 <h4>{dream.title}</h4>
                 <p>{dream.content}</p>
                 <p>{dream.Genre}</p>
