@@ -6,7 +6,6 @@ function List(props){
   const searchValue = props.searchValue;
   return (
     <div>
-      <h1>external component</h1>
       <section>
           {items.map((dream, index) => {
             if (

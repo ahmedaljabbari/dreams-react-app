@@ -4,6 +4,7 @@ import React from "react";
 import SearchIcon from "../src/Images/search.png";
 import DREAMS from "./dreams-data.json";
 import List from "./components/list";
+import Radio from "./components/RadioButtons";
 import "./App.css";
 
 class App extends React.Component {
@@ -43,6 +44,7 @@ class App extends React.Component {
     });
   };
 
+  
   addItem = (e) => {
     e.preventDefault();
     const newItem = {
@@ -89,44 +91,9 @@ class App extends React.Component {
             onChange={this.handleContent}
             value={this.state.text}
           ></textarea>{" "}
-          <div>
-                <input
-                  type="radio"
-                  value="Happy"
-                  checked={this.state.newGenre === "Happy"}
-                  onChange={this.changeRadio}
-                ></input>
-                <label>Happy</label>
-              </div>
-              <div>
-                <input
-                  type="radio"
-                  value="Sad"
-                  checked={this.state.newGenre === "Sad"}
-                  onChange={this.changeRadio}
-                ></input>{" "}
-                <label>Sad</label>
-              </div>
-              <div>
-                <input
-                  type="radio"
-                  value="Scary"
-                  checked={this.state.newGenre === "Scary"}
-                  onChange={this.changeRadio}
-                ></input>{" "}
-                <label>Scary</label>
-              </div>
-              <div>
-                <input
-                  type="radio"
-                  value="Mystery"
-                  checked={this.state.newGenre === "Mystery"}
-                  onChange={this.changeRadio}
-                ></input>{" "}
-                <label>Mystery</label>
-              </div>
+                   
+          <Radio newGenre={this.state.newGenre} changeRadio={this.changeRadio} />
 
-          <br />
           <button type="submit">Add</button>
         </form>
 
