@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      items: [],
+      items: DREAMS,
       searchValue:"",
       rubrik: "",
       text: ""
@@ -42,6 +42,14 @@ class App extends React.Component {
       content: this.state.text
     }
     console.log(newItem)
+    if(newItem.rubrik !== ""){
+      const newItems = [...this.state.items, newItem];
+      this.setState({
+        items: newItems,  // خلينه اللسته الجديده بعد اضافة العنصر بمكان اللسته الاصليه
+        rubrik: "",
+        text: ""          //فرغنا الحقول بعد اظافة العنصر الجديد
+      })
+    }
   }
 
   render() {
@@ -67,7 +75,7 @@ class App extends React.Component {
         </form>
 
         <section>
-          {DREAMS.map((dream, index) => {
+          {this.state.items.map((dream, index) => {
             if (
               this.state.searchValue !== "" &&
               dream.title
