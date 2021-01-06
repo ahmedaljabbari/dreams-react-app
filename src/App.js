@@ -81,23 +81,31 @@ class App extends React.Component {
           </div>
         </div>
 
-        <form id="add-form" onSubmit={this.addItem}>
-          <input
-            type="text"
-            placeholder="Input a title"
-            onChange={this.handleTitle}
-            value={this.state.rubrik}
-          ></input>{" "}
-          <br />
-          <textarea
-            onChange={this.handleContent}
-            value={this.state.text}
-          ></textarea>{" "}
-                   
-          <Radio newGenre={this.state.newGenre} changeRadio={this.changeRadio} />
+        <section>
+          <div className="slide-section">
+            <form id="add-form" onSubmit={this.addItem}>
+              <input
+                type="text"
+                placeholder="Type title ..."
+                onChange={this.handleTitle}
+                value={this.state.rubrik}
+              ></input>{" "}
+              <textarea
+                onChange={this.handleContent}
+                value={this.state.text}
+                placeholder="Describe your dream ..."
+              ></textarea>{" "}
+                      
+              <Radio newGenre={this.state.newGenre} changeRadio={this.changeRadio} />
 
-          <button type="submit">Add</button>
-        </form>
+              <button type="submit">Add</button>
+            </form>
+          </div>
+          <div id="slider">
+            + Add your dream
+          </div>
+
+        </section>
 
         <List listItems={this.state.items} searchValue={this.state.searchValue} />
       </div>

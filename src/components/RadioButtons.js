@@ -1,4 +1,5 @@
 import React from "react";
+import "../assets/radio.css";
 
 function Radio(props){
 
@@ -6,9 +7,10 @@ function Radio(props){
   const changeRadio = props.changeRadio;
 
   return(
-    <div>
+    <div className="radio-container">
       <div>
         <input
+          className="radioo"
           type="radio"
           value="Happy"
           checked={newGenre === "Happy"}
@@ -18,6 +20,7 @@ function Radio(props){
       </div>
       <div>
         <input
+          className="radioo"
           type="radio"
           value="Sad"
           checked={newGenre === "Sad"}
@@ -27,6 +30,7 @@ function Radio(props){
       </div>
       <div>
         <input
+          className="radioo"
           type="radio"
           value="Scary"
           checked={newGenre === "Scary"}
@@ -36,6 +40,7 @@ function Radio(props){
       </div>
       <div>
         <input
+          className="radioo"
           type="radio"
           value="Mystery"
           checked={newGenre === "Mystery"}

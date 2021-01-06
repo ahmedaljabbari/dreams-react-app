@@ -1,0 +1,13 @@
+.radio-container{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.radioo{
+  cursor: pointer;
+}
+
+label{
+  font-weight: bold;
+}
