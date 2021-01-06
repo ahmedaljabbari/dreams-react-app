@@ -4,18 +4,45 @@ import React from "react";
 import "./App.css";
 import SearchIcon from "../src/Images/search.png";
 import DREAMS from "./dreams-data.json";
-import { useState } from "react";
 
 class App extends React.Component {
-  state = {
-    searchValue: "",
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      items: [],
+      searchValue:"",
+      rubrik: "",
+      text: ""
+  
+    };
+  }
 
-  setSearchValue = (event) => {
+  handleInput = (event) => {
     this.setState({
       searchValue: event.target.value,
     });
   };
+
+  handleTitle = (event) =>{
+    this.setState({
+      rubrik: event.target.value
+    })
+  }
+
+  handleContent = (event) =>{
+    this.setState({
+      text: event.target.value
+    })
+  }
+
+  addItem = (e) => {
+    e.preventDefault();
+    const newItem = {
+      title: this.state.rubrik,
+      content: this.state.text
+    }
+    console.log(newItem)
+  }
 
   render() {
     return (
@@ -25,12 +52,19 @@ class App extends React.Component {
             type="text"
             className="searchTerm"
             placeholder="What are you looking for?"
-            onChange={this.setSearchValue}
+            onChange={this.handleInput}
           ></input>
           <button type="submit" className="searchButton">
             <img src={SearchIcon}></img>{" "}
           </button>
         </div>
+
+        <form id="add-form" onSubmit={this.addItem}>
+          <input type="text" placeholder="Input a title" onChange={this.handleTitle}></input> <br />
+          <textarea onChange={this.handleContent}></textarea> <br />
+
+          <button type="submit">Add</button>
+        </form>
 
         <section>
           {DREAMS.map((dream, index) => {
