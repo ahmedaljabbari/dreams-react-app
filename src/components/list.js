@@ -21,6 +21,7 @@ function List(props){
               <div key={index}>
                 <h4>{dream.title}</h4>
                 <p>{dream.content}</p>
+                <p>{dream.Genre}</p>
               </div>
             );
           })}
