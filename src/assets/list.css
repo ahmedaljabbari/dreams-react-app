@@ -24,8 +24,11 @@
   color: red;
 }
 
-#dream-box > h3{
+.title-box{
   color: #395e60;
+  font-size: 20px;
+  border: none;
+  width: 80%;
 }
 
 #typ{
