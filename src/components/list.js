@@ -5,6 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 function List(props){
   const items = props.listItems;
   const searchValue = props.searchValue;
+  const deleteDream = props.deleteDream; 
   return (
     <div>
       <section>
@@ -18,11 +19,11 @@ function List(props){
               return null;
             }
             return (
-              <div id="dream-box" key={index}>
-                <h4>{dream.title}</h4>
+              <div id="dream-box" key={dream.index}>
+                <h3>{dream.title}</h3>
                 <p>{dream.content}</p>
-                <p>{dream.Genre}</p>
-                <span>
+                <p id="typ">{dream.Genre}</p>
+                <span onClick={deleteDream}>
                   <FontAwesomeIcon className="faicon" icon="trash" />
                 </span>
               </div>

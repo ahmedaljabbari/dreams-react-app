@@ -59,7 +59,7 @@ body{
 }
 
 .slide-section{
-  display: none;
+  display: block;
 }
 
 #add-form{

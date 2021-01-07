@@ -9,7 +9,7 @@ import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTrash} from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 
-library.add(faTrash)
+library.add(faTrash);
 
 class App extends React.Component {
   constructor(props) {
@@ -68,6 +68,14 @@ class App extends React.Component {
     }
   };
 
+  deleteItem = (index) => {
+    const filteredItems = [...this.state.items];
+    filteredItems.splice(index, 1);
+      this.setState({
+        items:filteredItems
+      })
+  }
+
   render() {
     return (
       <div className="App">
@@ -89,12 +97,14 @@ class App extends React.Component {
           <div className="slide-section">
             <form id="add-form" onSubmit={this.addItem}>
               <input
+                required
                 type="text"
                 placeholder="Type title ..."
                 onChange={this.handleTitle}
                 value={this.state.rubrik}
               ></input>{" "}
               <textarea
+                required
                 onChange={this.handleContent}
                 value={this.state.text}
                 placeholder="Describe your dream ..."
@@ -111,7 +121,7 @@ class App extends React.Component {
 
         </section>
 
-        <List listItems={this.state.items} searchValue={this.state.searchValue} />
+        <List listItems={this.state.items} searchValue={this.state.searchValue} deleteDream={this.deleteItem} />
       </div>
     );
   }
