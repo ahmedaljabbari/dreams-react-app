@@ -111,3 +111,19 @@ body{
   display: flex;
   flex-direction: column-reverse;
 }
+
+#validRadio{
+  background-color: transparent;
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+  display: none;
+  border: solid black 1px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+#validRadio > i{
+  margin-right: 5px;
+
+}

@@ -55,23 +55,28 @@ class App extends React.Component {
 
   addItem = (e) => {
     e.preventDefault();
-    const newItem = {
-      title: this.state.rubrik,
-      content: this.state.text,
-      Genre: this.state.newGenre,
-      key: Date.now()
-    };
-    console.log(newItem);
-    if (newItem.rubrik !== "") {
-      const newItems = [...this.state.items, newItem];
-      this.setState({
-        items: newItems, // خلينه اللسته الجديده بعد اضافة العنصر بمكان اللسته الاصليه
-        rubrik: "",
-        text: "", //فرغنا الحقول بعد اظافة العنصر الجديد
-        newGenre: "",
-        key:""
-      });
-      $("#slide-section").slideToggle(800);
+    if (this.state.newGenre === "") {$("#validRadio").fadeIn()}
+    else {
+      const newItem = {
+        title: this.state.rubrik,
+        content: this.state.text,
+        Genre: this.state.newGenre,
+        key: Date.now()
+      };
+      console.log(newItem);
+      if (newItem.rubrik !== "") {
+        const newItems = [...this.state.items, newItem];
+        this.setState({
+          items: newItems, // خلينه اللسته الجديده بعد اضافة العنصر بمكان اللسته الاصليه
+          rubrik: "",
+          text: "", //فرغنا الحقول بعد اظافة العنصر الجديد
+          newGenre: "",
+          key:""
+        });
+        $("#slide-section").slideToggle(800);
+        $("#txto").fadeToggle();
+        $("#validRadio").fadeOut()
+      }
     }
   };
 
@@ -137,6 +142,7 @@ class App extends React.Component {
   performSliding = () =>{
     const el = document.getElementById("slide-section");
     $(el).slideToggle(800);
+    $("#txto").fadeToggle();
   }
 
   render() {
@@ -176,6 +182,10 @@ class App extends React.Component {
                 newGenre={this.state.newGenre}
                 changeRadio={this.changeRadio}
               />
+              <div id="validRadio">
+                <i class="fa fa-exclamation-triangle"></i>
+                <span >Please pick a genre for your dream</span>
+              </div>
               <button type="submit">Add</button>
             </form>
           </div>
@@ -183,7 +193,7 @@ class App extends React.Component {
           <div id="slider">
             <button id="Slider-btn" onClick={this.performSliding}>
               <i class="fa fa-plus-square"></i>
-              Add your dream
+              <span id="txto">Add your dream</span>
               <i class="fa fa-unsorted"></i>
             </button>
           </div>
