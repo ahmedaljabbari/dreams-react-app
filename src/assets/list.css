@@ -1,6 +1,6 @@
 #dream-box{
   background-color: snow;
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   padding: 10px 20px 40px;
   margin-bottom: 30px;
@@ -24,11 +24,62 @@
   color: red;
 }
 
-.title-box{
+#flexer{
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#title-box{
   color: #395e60;
   font-size: 20px;
   border: none;
   width: 80%;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+#txt-area{
+ background-color: white;
+ border: none;
+ padding-top: 10px;
+ margin-top: 20px;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 18px;
+  width: 80%;
+ min-height: 180px;
+ color: #202020;
+}
+
+.fa-edit{
+  position:absolute;
+  right: 40px;
+  top: 10px;
+  font-size: 23px;
+  padding-top: 3px;
+  color: brown;
+}
+
+.fa-check-circle{
+  display: none;
+  position:absolute;
+  right: 40px;
+  top: 10px;
+  font-size: 23px;
+  padding-top: 2.5px; 
+}
+
+.fa-edit:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.3s;
+  color: blue;
+}
+
+.fa-check-circle:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.3s;
+  color: green;
 }
 
 #typ{

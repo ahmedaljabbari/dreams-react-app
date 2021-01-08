@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function List(props) {
   const items = props.listItems;
   const searchValue = props.searchValue;
- // const deleteDream = props.deleteDream(dream.key);
+  // const deleteDream = props.deleteDream(dream.key);
   return (
     <div>
-      <section>
+      <section id="flexer">
         {items.map((dream) => {
           if (
             searchValue !== "" &&
@@ -19,19 +19,41 @@ function List(props) {
           return (
             <div id="dream-box" key={dream.key}>
               <input
+                disabled
                 type="text"
-                className="title-box"
-                id={dream.key}
+                id="title-box"
+                className={dream.key}
                 value={dream.title}
                 onChange={(e) => {
                   props.setUpdate(e.target.value, dream.key);
                 }}
               ></input>
-              <p>{dream.content}</p>
+              <textarea
+                id="txt-area"
+                disabled
+                value={dream.content}
+                className={dream.key}
+              ></textarea>
               <p id="typ">{dream.Genre}</p>
               <span onClick={() => props.deleteItem(dream.key)}>
                 <FontAwesomeIcon className="faicon" icon="trash" />
               </span>
+              <i
+                class="fa fa-edit"
+                id={dream.key + 1}
+                onClick={() => {
+                  props.enableEdit(dream.key);
+                }}
+              >
+                
+              </i>
+              <i 
+                class="fa fa-check-circle"
+                id={dream.key + 2}
+                onClick={() => {
+                  props.agreeEdit(dream.key);
+                }}
+              ></i>
             </div>
           );
         })}

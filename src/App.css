@@ -102,3 +102,7 @@ body{
   transition: 0.3s;
 }
 
+#flexer{
+  display: flex;
+  flex-direction: column-reverse;
+}

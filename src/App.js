@@ -7,6 +7,8 @@ import List from "./components/list";
 import Radio from "./components/RadioButtons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import $ from "jquery";
+import { findDOMNode } from "react-dom";
 import "./App.css";
 
 library.add(faTrash);
@@ -78,6 +80,35 @@ class App extends React.Component {
     });
   };
 
+
+  enableEdit = (key) => {
+    const editedList = this.state.items;
+    editedList.map((dream) => {
+      if(dream.key === key){
+        var el = document.getElementsByClassName(dream.key);
+        var editBtn = document.getElementById(dream.key + 1);
+        var okBtn = document.getElementById(dream.key + 2);
+        $(el).removeAttr('disabled').css({"background-color": "lightgray", "padding": "10px"})
+        $(editBtn).hide()
+        $(okBtn).fadeIn(700)
+      }
+    })
+  }  
+
+  agreeEdit = (key) => {
+    const editedList = this.state.items;
+    editedList.map((dream) => {
+      if(dream.key === key){
+        var el = document.getElementsByClassName(dream.key);
+        var editBtn = document.getElementById(dream.key + 1);
+        var okBtn = document.getElementById(dream.key + 2);
+        $(el).attr('disabled', true).css({"background-color": "transparent"})
+        $(okBtn).hide()
+        $(editBtn).fadeIn();
+      }
+    })
+  }
+
   setUpdate(title, key){
     const editedList = this.state.items;
     editedList.map((dream) => {
@@ -138,8 +169,11 @@ class App extends React.Component {
           searchValue={this.state.searchValue}
           deleteItem={this.deleteItem}
           setUpdate={this.setUpdate}
+          enableEdit={this.enableEdit}
+          agreeEdit={this.agreeEdit}
         />
-      </div>
+        </div>
+      
     );
   }
 }
