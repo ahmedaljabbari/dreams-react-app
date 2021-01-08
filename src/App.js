@@ -9,6 +9,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import $ from "jquery";
 import "./App.css";
+import "./assets/slider.css";
 
 library.add(faTrash);
 
@@ -70,6 +71,7 @@ class App extends React.Component {
         newGenre: "",
         key:""
       });
+      $("#slide-section").slideToggle(800);
     }
   };
 
@@ -132,6 +134,11 @@ class App extends React.Component {
     })
   }
 
+  performSliding = () =>{
+    const el = document.getElementById("slide-section");
+    $(el).slideToggle(800);
+  }
+
   render() {
     return (
       <div className="App">
@@ -150,7 +157,7 @@ class App extends React.Component {
         </div>
 
         <section>
-          <div className="slide-section">
+          <div id="slide-section">
             <form id="add-form" onSubmit={this.addItem}>
               <input
                 required
@@ -172,7 +179,14 @@ class App extends React.Component {
               <button type="submit">Add</button>
             </form>
           </div>
-          <div id="slider">+ Add your dream</div>
+          
+          <div id="slider">
+            <button id="Slider-btn" onClick={this.performSliding}>
+              <i class="fa fa-plus-square"></i>
+              Add your dream
+              <i class="fa fa-unsorted"></i>
+            </button>
+          </div>
         </section>
 
         <List

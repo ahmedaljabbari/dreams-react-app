@@ -1,0 +1,24 @@
+#slider{
+  margin: 10px 0;
+  
+}
+
+#Slider-btn{
+  background-color:  #2F4F50;
+  width: 250px;
+  font-size: 18px;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+}
+
+#Slider-btn:hover{
+  transform: scale(1.05);
+  transition: 0.3s;
+  cursor: pointer;
+}
