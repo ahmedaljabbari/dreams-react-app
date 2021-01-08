@@ -8,7 +8,6 @@ import Radio from "./components/RadioButtons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import $ from "jquery";
-import { findDOMNode } from "react-dom";
 import "./App.css";
 
 library.add(faTrash);
@@ -26,6 +25,7 @@ class App extends React.Component {
       newGenre: "",
     };
     this.setUpdate = this.setUpdate.bind(this);
+    this.setUpdateTxt = this.setUpdateTxt.bind(this);
   }
 
   handleInput = (event) => {
@@ -113,13 +113,24 @@ class App extends React.Component {
     const editedList = this.state.items;
     editedList.map((dream) => {
       if(dream.key === key){
-        dream.title = title
+        dream.title = title        
       }
     })
     this.setState({
       items:editedList
     })
   };
+  setUpdateTxt(content, key){
+    const editedList = this.state.items;
+    editedList.map((dream) => {
+      if(dream.key === key){
+        dream.content = content
+      }
+    })
+    this.setState({
+      items:editedList
+    })
+  }
 
   render() {
     return (
@@ -171,6 +182,7 @@ class App extends React.Component {
           setUpdate={this.setUpdate}
           enableEdit={this.enableEdit}
           agreeEdit={this.agreeEdit}
+          setUpdateTxt={this.setUpdateTxt}
         />
         </div>
       

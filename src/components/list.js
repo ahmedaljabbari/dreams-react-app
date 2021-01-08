@@ -33,6 +33,10 @@ function List(props) {
                 disabled
                 value={dream.content}
                 className={dream.key}
+
+                onChange={(e) => {
+                  props.setUpdateTxt(e.target.value, dream.key);
+                }}
               ></textarea>
               <p id="typ">{dream.Genre}</p>
               <span onClick={() => props.deleteItem(dream.key)}>
