@@ -88,6 +88,7 @@ body{
   letter-spacing: 1px;
   cursor: pointer;
   box-shadow: 0 2px 4px black;
+  padding: 10px 0;
 }
 
 #add-form > *:last-child:hover{
