@@ -27,3 +27,9 @@
   cursor: pointer;
   color: white;
 }
+
+@media (max-width: 700px) {
+  #Slider-btn{
+    width: 90%;
+  }
+}

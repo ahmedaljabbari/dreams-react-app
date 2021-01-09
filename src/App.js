@@ -1,7 +1,6 @@
 /** @format */
 
 import React from "react";
-import SearchIcon from "../src/Images/search.png";
 import DREAMS from "./dreams-data.json";
 import List from "./components/list";
 import Radio from "./components/RadioButtons";

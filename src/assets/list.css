@@ -86,6 +86,64 @@
   position: absolute;
   right: 10px;
   bottom: 0px;
-  color: brown;
+  color: goldenrod;
   font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  #dream-box{
+    padding: 10px 10px 40px;
+    box-sizing: border-box;
+    width: 90%;
+  }
+
+  #title-box{
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #txt-area{
+    padding-top: 0px;
+    font-size: 16px;
+    width: 100%;
+    min-height: 180px;
+    color: snow;
+    box-sizing: border-box;
+   }
+
+   #dream-box > span{
+    position: static;
+    margin: 0 10px;
+    font-size: 23px;
+    padding-top: 4px;
+
+  }
+
+   .fa-edit{
+    position: static;
+    margin-left: 20px;
+    float: right;
+    font-size: 30px;
+  }
+  #typ{
+    position: static;
+    color: goldenrod;
+  }
+
+  
+  .fa-check-circle{
+    display: none;
+    position:absolute;
+    right: 40px;
+    top: 30%;
+    font-size: 80px;
+    padding-top: 2px; 
+  }
+
+  .fa-check-circle{
+    position:absolute;
+    right: 40px;
+    top: 70%;
+    color:  #385E3C;
+  }
 }
