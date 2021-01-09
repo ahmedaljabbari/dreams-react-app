@@ -95,7 +95,7 @@ class App extends React.Component {
         var el = document.getElementsByClassName(dream.key);
         var editBtn = document.getElementById(dream.key + 1);
         var okBtn = document.getElementById(dream.key + 2);
-        $(el).removeAttr('disabled').css({"background-color": "lightgray", "padding": "10px"})
+        $(el).removeAttr('disabled').css({"background-color": "#2D2D2D", "padding": "10px"})
         $(editBtn).hide()
         $(okBtn).fadeIn(700)
       }
@@ -156,9 +156,7 @@ class App extends React.Component {
               placeholder="Search for dreams ..."
               onChange={this.handleInput}
             ></input>
-            <button type="submit" className="searchButton">
-              <img src={SearchIcon} alt=""></img>{" "}
-            </button>
+            <i class="fa fa-search"></i>
           </div>
         </div>
 
@@ -191,11 +189,11 @@ class App extends React.Component {
           </div>
           
           <div id="slider">
-            <button id="Slider-btn" onClick={this.performSliding}>
+            <divs id="Slider-btn" onClick={this.performSliding}>
               <i class="fa fa-plus-square"></i>
               <span id="txto">Add your dream</span>
               <i class="fa fa-unsorted"></i>
-            </button>
+            </divs>
           </div>
         </section>
 

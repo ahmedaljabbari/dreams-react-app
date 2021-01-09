@@ -1,11 +1,11 @@
 #dream-box{
-  background-color: snow;
+  background-color: #191919;
   width: 60%;
   margin: 0 auto;
   padding: 10px 20px 40px;
   margin-bottom: 30px;
   position: relative;
-  box-shadow: 0 3px 5px gray;
+  box-shadow: 0 3px 5px black;
   text-align: left;
 }
 
@@ -30,7 +30,7 @@
 }
 
 #title-box{
-  color: #395e60;
+  color: #3B444F;
   font-size: 20px;
   border: none;
   width: 80%;
@@ -39,7 +39,7 @@
 }
 
 #txt-area{
- background-color: white;
+ background-color: transparent;
  border: none;
  padding-top: 10px;
  margin-top: 20px;
@@ -47,7 +47,7 @@
  font-size: 18px;
  width: 80%;
  min-height: 180px;
- color: #202020;
+ color: snow;
 }
 
 .fa-edit{
@@ -72,14 +72,14 @@
   cursor: pointer;
   transform: scale(1.1);
   transition: 0.3s;
-  color: blue;
+  color: gold;
 }
 
 .fa-check-circle:hover{
   cursor: pointer;
   transform: scale(1.1);
   transition: 0.3s;
-  color: green;
+  color: #385E3C;
 }
 
 #typ{
