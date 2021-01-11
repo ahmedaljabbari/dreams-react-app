@@ -11,8 +11,9 @@ function List(props) {
       <section id="flexer">
         {items.map((dream) => {
           if (
-            searchValue !== "" &&
-            dream.title.toLowerCase().indexOf(searchValue.toLowerCase()) === -1
+            searchValue !== "" && 
+            dream.title.toLowerCase().indexOf(searchValue.toLowerCase()) === -1 &&
+            dream.content.toLowerCase().indexOf(searchValue.toLowerCase()) === -1
           ) {
             return null;
           }
